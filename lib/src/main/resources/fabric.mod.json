@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "comma",
+  "version": "${version}",
+
+  "name": "COMMA Config API",
+  "description": "An API for creating complex and stylish config menu screens for your Fabric mods.",
+  "authors": [
+    "Dr. Rubisco (@thedocruby)"
+  ],
+  "contact": {
+    "homepage": "https://thedocruby.github.io/comma",
+    "sources": "https://github.com/thedocruby/comma"
+  },
+
+  "license": "MIT",
+  "icon": "assets/comma/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.thedocruby.comma.CommaMod"
+    ]
+  },
+  "mixins": [
+    "modid.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.12.12",
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "java": ">=17"
+  },
+  "suggests": {
+    "modmenu": ">=3.0.1"
+  }
+}
