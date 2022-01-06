@@ -9,8 +9,10 @@
     "Dr. Rubisco (@thedocruby)"
   ],
   "contact": {
-    "homepage": "https://thedocruby.github.io/comma",
-    "sources": "https://github.com/thedocruby/comma"
+    "homepage": "https://github.com/thedocruby/comma",
+    "sources": "https://github.com/thedocruby/comma",
+    "issues": "https://github.com/thedocruby/comma/issues",
+    "email": "mailto:thedocruby@gmail.com?subject=COMMA%20Config%20API"
   },
 
   "license": "MIT",
@@ -23,7 +25,7 @@
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "comma.mixins.json"
   ],
 
   "depends": {
