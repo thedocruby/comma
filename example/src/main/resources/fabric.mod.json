@@ -2,20 +2,36 @@
   "schemaVersion": 1,
   "id": "example",
   "version": "${version}",
-  "name": "CompleteConfig Example Mod",
+
+  "name": "COMMA Example Mod",
+  "icon": "assets/example/icon.png",
+  "description": "Mod showcasing the capabilities of COMMA Config API. Gives a complete example of implementation",
+  "license": "LGPL-3.0",
   "authors": [
-    "Dr. Rubisco (@thedocruby), Boxed (@maximumpower55)"
+    "Dr. Rubisco (@thedocruby)", "Boxed (@maximumpower55)"
   ],
-  "license": "Apache-2.0",
+  "contact": {
+    "homepage": "https://github.com/thedocruby/comma",
+    "sources": "https://github.com/thedocruby/comma",
+    "issues": "https://github.com/thedocruby/comma/issues",
+    "email": "thedocruby@gmail.com"
+  },
+
   "environment": "*",
   "entrypoints": {
     "main": [
       "dev.thedocruby.comma.example.ExampleMod"
     ]
   },
+
   "depends": {
     "java": ">=17",
-    "fabricloader": ">=0.11.3",
-    "completeconfig": "^1.0.0"
+    "minecraft": "1.18.x",
+    "fabricloader": ">=0.12.12",
+    "fabric": "*",
+    "comma": "${version}"
+  },
+  "suggests": {
+    "modmenu": ">=3.0.1"
   }
 }
