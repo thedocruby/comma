@@ -11,7 +11,7 @@
 
 ## Description
 
-COMMA is a mod configuration API (config API) that aims to use modern libraries and programming techniques to create a config generation experience that is both intuitive and flexible for the mod developers of tomorrow. Using SpongePowered's flexible [Configurate](https://github.com/SpongePowered/Configurate) library, COMMA is able to add JSON serializers for all of Minecraft's commonly used data types, through an internal library called MCereal (not yet available separately). Our modern use of flexible metaprogramming techniques allows COMMA to integrate with your mod, without any hassle.
+COMMA is a mod configuration API (config API) that aims to use modern libraries and programming techniques to create a config generation experience that is both intuitive and flexible for the mod developers of tomorrow. Using SpongePowered's flexible [Configurate](https://github.com/SpongePowered/Configurate) library, COMMA is able to add JSON serializers for all of Minecraft's commonly used data types, through an internal library called MCereal (not yet available separately). On top of this, our modern use of flexible metaprogramming techniques allows COMMA to integrate with your mod, without any hassle.
 
 ## License
 
