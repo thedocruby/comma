@@ -10,8 +10,7 @@ pluginManagement {
 }
 
 include("lib")
-//include("example")
+include("example")
 
 rootProject.name = 'comma'
-include 'example'
 
