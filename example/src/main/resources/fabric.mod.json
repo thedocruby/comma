@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "example",
+  "version": "${version}",
+  "name": "CompleteConfig Example Mod",
+  "authors": [
+    "Dr. Rubisco (@thedocruby), Boxed (@maximumpower55)"
+  ],
+  "license": "Apache-2.0",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.thedocruby.comma.example.ExampleMod"
+    ]
+  },
+  "depends": {
+    "java": ">=17",
+    "fabricloader": ">=0.11.3",
+    "completeconfig": "^1.0.0"
+  }
+}

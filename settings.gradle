@@ -13,3 +13,5 @@ include("lib")
 //include("example")
 
 rootProject.name = 'comma'
+include 'example'
+
