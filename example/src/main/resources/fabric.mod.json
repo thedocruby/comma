@@ -11,10 +11,9 @@
     "Dr. Rubisco (@thedocruby)", "Boxed (@maximumpower55)"
   ],
   "contact": {
-    "homepage": "https://github.com/thedocruby/comma",
+    "homepage": "https://thedocruby.dev/comma",
     "sources": "https://github.com/thedocruby/comma",
-    "issues": "https://github.com/thedocruby/comma/issues",
-    "email": "thedocruby@gmail.com"
+    "issues": "https://github.com/thedocruby/comma/issues"
   },
 
   "environment": "*",
