@@ -42,6 +42,7 @@ javadoc {
 publishing {
 	publications {
 		mavenJava(MavenPublication) {
+			artifactId rootProject.name
 			from components.java
 		}
 	}
