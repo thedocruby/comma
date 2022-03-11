@@ -49,127 +49,103 @@ public class MCerealizer {
 
     @Nullable
     public String getString(String[] path, String defaultValue) {
-        ConfigurationNode node = rootNode.node((Object[]) path);
-        return node.getString(defaultValue);
+        return rootNode.node((Object[]) path).getString(defaultValue);
     }
 
     public boolean getBoolean(String[] path, boolean defaultValue) {
-        ConfigurationNode node = rootNode.node((Object[]) path);
-        return node.getBoolean(defaultValue);
+        return rootNode.node((Object[]) path).getBoolean(defaultValue);
     }
 
     public int getInt(String[] path, int defaultValue) {
-        ConfigurationNode node = rootNode.node((Object[]) path);
-        return node.getInt(defaultValue);
+        return rootNode.node((Object[]) path).getInt(defaultValue);
     }
 
     public long getLong(String[] path, long defaultValue) {
-        ConfigurationNode node = rootNode.node((Object[]) path);
-        return node.getLong(defaultValue);
+        return rootNode.node((Object[]) path).getLong(defaultValue);
     }
 
     public float getFloat(String[] path, float defaultValue) {
-        ConfigurationNode node = rootNode.node((Object[]) path);
-        return node.getFloat(defaultValue);
+        return rootNode.node((Object[]) path).getFloat(defaultValue);
     }
 
     public double getDouble(String[] path, double defaultValue) {
-        ConfigurationNode node = rootNode.node((Object[]) path);
-        return node.getDouble(defaultValue);
+        return rootNode.node((Object[]) path).getDouble(defaultValue);
     }
 
     @Nullable
     public <T> List<T> getList(String[] path, Class<T> type, List<T> defaultValue) throws SerializationException {
-        ConfigurationNode node = rootNode.node((Object[]) path);
-        return node.getList(type, defaultValue);
+        return rootNode.node((Object[]) path).getList(type, defaultValue);
     }
 
     @Nullable
     public <T> T get(String[] path, Class<T> type, T defaultValue) throws SerializationException {
-        ConfigurationNode node = rootNode.node((Object[]) path);
-        return node.get(type, defaultValue);
+        return rootNode.node((Object[]) path).get(type, defaultValue);
     }
 
     @Nullable
     public String getString(String[] path) {
-        ConfigurationNode node = rootNode.node((Object[]) path);
-        return node.getString();
+        return rootNode.node((Object[]) path).getString();
     }
 
     public boolean getBoolean(String[] path) {
-        ConfigurationNode node = rootNode.node((Object[]) path);
-        return node.getBoolean();
+        return rootNode.node((Object[]) path).getBoolean();
     }
 
     public int getInt(String[] path) {
-        ConfigurationNode node = rootNode.node((Object[]) path);
-        return node.getInt();
+        return rootNode.node((Object[]) path).getInt();
     }
 
     public long getLong(String[] path) {
-        ConfigurationNode node = rootNode.node((Object[]) path);
-        return node.getLong();
+        return rootNode.node((Object[]) path).getLong();
     }
 
     public float getFloat(String[] path) {
-        ConfigurationNode node = rootNode.node((Object[]) path);
-        return node.getFloat();
+        return rootNode.node((Object[]) path).getFloat();
     }
 
     public double getDouble(String[] path) {
-        ConfigurationNode node = rootNode.node((Object[]) path);
-        return node.getDouble();
+        return rootNode.node((Object[]) path).getDouble();
     }
 
     @Nullable
     public <T> List<T> getList(String[] path, Class<T> type) throws SerializationException {
-        ConfigurationNode node = rootNode.node((Object[]) path);
-        return node.getList(type);
+        return rootNode.node((Object[]) path).getList(type);
     }
 
     @Nullable
     public <T> T get(String[] path, Class<T> type) throws SerializationException {
-        ConfigurationNode node = rootNode.node((Object[]) path);
-        return node.get(type);
+        return rootNode.node((Object[]) path).get(type);
     }
 
     public void setString(String[] path, @Nullable String value) throws SerializationException {
-        ConfigurationNode node = rootNode.node((Object[]) path);
-        node.set(value);
+        rootNode.node((Object[]) path).set(value);
     }
 
     public void setBoolean(String[] path, boolean value) throws SerializationException {
-        ConfigurationNode node = rootNode.node((Object[]) path);
-        node.set(value);
+        rootNode.node((Object[]) path).set(value);
     }
 
     public void setInt(String[] path, int value) throws SerializationException {
-        ConfigurationNode node = rootNode.node((Object[]) path);
-        node.set(value);
+        rootNode.node((Object[]) path).set(value);
     }
 
     public void setLong(String[] path, long value) throws SerializationException {
-        ConfigurationNode node = rootNode.node((Object[]) path);
-        node.set(value);
+        rootNode.node((Object[]) path).set(value);
     }
 
     public void setFloat(String[] path, float value) throws SerializationException {
-        ConfigurationNode node = rootNode.node((Object[]) path);
-        node.set(value);
+        rootNode.node((Object[]) path).set(value);
     }
 
     public void setDouble(String[] path, double value) throws SerializationException {
-        ConfigurationNode node = rootNode.node((Object[]) path);
-        node.set(value);
+        rootNode.node((Object[]) path).set(value);
     }
 
     public <T> void setList(String[] path, Class<T> type, @Nullable List<T> value) throws SerializationException {
-        ConfigurationNode node = rootNode.node((Object[]) path);
-        node.setList(type, value);
+        rootNode.node((Object[]) path).setList(type, value);
     }
 
     public <T> void set(String[] path, Class<T> type, @Nullable T value) throws SerializationException {
-        ConfigurationNode node = rootNode.node((Object[]) path);
-        node.set(type, value);
+        rootNode.node((Object[]) path).set(type, value);
     }
 }
