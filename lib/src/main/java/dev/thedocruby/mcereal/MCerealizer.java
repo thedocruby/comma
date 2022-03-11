@@ -48,6 +48,49 @@ public class MCerealizer {
     }
 
     @Nullable
+    public String getString(String[] path, String defaultValue) {
+        ConfigurationNode node = rootNode.node((Object[]) path);
+        return node.getString(defaultValue);
+    }
+
+    public boolean getBoolean(String[] path, boolean defaultValue) {
+        ConfigurationNode node = rootNode.node((Object[]) path);
+        return node.getBoolean(defaultValue);
+    }
+
+    public int getInt(String[] path, int defaultValue) {
+        ConfigurationNode node = rootNode.node((Object[]) path);
+        return node.getInt(defaultValue);
+    }
+
+    public long getLong(String[] path, long defaultValue) {
+        ConfigurationNode node = rootNode.node((Object[]) path);
+        return node.getLong(defaultValue);
+    }
+
+    public float getFloat(String[] path, float defaultValue) {
+        ConfigurationNode node = rootNode.node((Object[]) path);
+        return node.getFloat(defaultValue);
+    }
+
+    public double getDouble(String[] path, double defaultValue) {
+        ConfigurationNode node = rootNode.node((Object[]) path);
+        return node.getDouble(defaultValue);
+    }
+
+    @Nullable
+    public <T> List<T> getList(String[] path, Class<T> type, List<T> defaultValue) throws SerializationException {
+        ConfigurationNode node = rootNode.node((Object[]) path);
+        return node.getList(type, defaultValue);
+    }
+
+    @Nullable
+    public <T> T get(String[] path, Class<T> type, T defaultValue) throws SerializationException {
+        ConfigurationNode node = rootNode.node((Object[]) path);
+        return node.get(type, defaultValue);
+    }
+
+    @Nullable
     public String getString(String[] path) {
         ConfigurationNode node = rootNode.node((Object[]) path);
         return node.getString();
@@ -89,7 +132,6 @@ public class MCerealizer {
         ConfigurationNode node = rootNode.node((Object[]) path);
         return node.get(type);
     }
-
 
     public void setString(String[] path, @Nullable String value) throws SerializationException {
         ConfigurationNode node = rootNode.node((Object[]) path);
