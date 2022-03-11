@@ -1,10 +1,14 @@
 plugins {
 	id 'com.github.johnrengelman.shadow' version '7.1.0'
+	id "io.freefair.lombok" version "6.4.1"
 	id 'maven-publish'
 }
 
-dependencies{
+dependencies {
 	shadow "org.spongepowered:configurate-hocon:${rootProject.configurate_version}"
+
+	// Fabric API. This is technically optional, but you probably want it anyway.
+	include "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_version}"
 }
 
 java {

@@ -8,7 +8,7 @@
   "description": "An API for creating complex and stylish config menu screens for your Fabric mods.",
   "license": "LGPL-3.0",
   "authors": [
-    "Dr. Rubisco (@thedocruby)", "Boxed (@maximumpower55)"
+    "Dr. Rubisco (@thedocruby)"
   ],
   "contact": {
     "homepage": "https://thedocruby.dev/comma",
@@ -28,11 +28,21 @@
 
   "depends": {
     "java": ">=17",
-    "minecraft": "1.18.x",
-    "fabricloader": ">=0.12.12",
-    "fabric": "*"
+    "minecraft": "1.18.2",
+    "fabricloader": ">=0.13.3"
   },
   "suggests": {
-    "modmenu": ">=3.0.1"
+    "modmenu": ">=3.1.0"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.wiki": "https://github.com/thedocruby/comma/wiki",
+        "modmenu.discord": "https://discord.gg/kdZ6gH7Hg6",
+        "modmenu.patreon": "https://patreon.com/thedocruby",
+        "modmenu.modrinth": "https://modrinth.com/mod/comma",
+        "modmenu.youtube": "https://www.youtube.com/channel/UCONFVOfzRPAISQj2Xbb827w"
+      }
+    }
   }
 }
