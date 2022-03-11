@@ -21,20 +21,18 @@ import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.configurate.CommentedConfigurationNode;
 import org.spongepowered.configurate.ConfigurateException;
-import org.spongepowered.configurate.ConfigurationNode;
 import org.spongepowered.configurate.hocon.HoconConfigurationLoader;
 import org.spongepowered.configurate.serialize.SerializationException;
 
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
 import java.nio.file.Path;
 import java.util.List;
-import java.util.Map;
 
 public class MCerealizer {
-    @Getter
-    private final String filePath;
-    private final HoconConfigurationLoader loader;
-    private CommentedConfigurationNode rootNode;
+    @Getter @NotNull
+    protected final String filePath;
+    protected final HoconConfigurationLoader loader;
+    protected CommentedConfigurationNode rootNode;
 
     public MCerealizer(String filePath) {
         this.filePath = filePath;
@@ -119,11 +117,6 @@ public class MCerealizer {
         return rootNode.node((Object[]) path).get(type);
     }
 
-    @Nullable
-    public String getComment(String[] path) {
-        return rootNode.node((Object[]) path).comment();
-    }
-
     public void setString(String[] path, @Nullable String value) throws SerializationException {
         rootNode.node((Object[]) path).set(value);
     }
@@ -154,77 +147,5 @@ public class MCerealizer {
 
     public <T> void set(String[] path, Class<T> type, @Nullable T value) throws SerializationException {
         rootNode.node((Object[]) path).set(type, value);
-    }
-
-    public void setString(String[] path, @Nullable String value, @Nullable String comment) throws SerializationException {
-        rootNode.node((Object[]) path).act(node -> {
-            node.set(value);
-            node.comment(comment);
-        });
-    }
-
-    public void setBoolean(String[] path, boolean value, @Nullable String comment) throws SerializationException {
-        rootNode.node((Object[]) path).act(node -> {
-            node.set(value);
-            node.comment(comment);
-        });
-    }
-
-    public void setInt(String[] path, int value, @Nullable String comment) throws SerializationException {
-        rootNode.node((Object[]) path).act(node -> {
-            node.set(value);
-            node.comment(comment);
-        });
-    }
-
-    public void setLong(String[] path, long value, @Nullable String comment) throws SerializationException {
-        rootNode.node((Object[]) path).act(node -> {
-            node.set(value);
-            node.comment(comment);
-        });
-    }
-
-    public void setFloat(String[] path, float value, @Nullable String comment) throws SerializationException {
-        rootNode.node((Object[]) path).act(node -> {
-            node.set(value);
-            node.comment(comment);
-        });
-    }
-
-    public void setDouble(String[] path, double value, @Nullable String comment) throws SerializationException {
-        rootNode.node((Object[]) path).act(node -> {
-            node.set(value);
-            node.comment(comment);
-        });
-    }
-
-    public <T> void setList(String[] path, Class<T> type, @Nullable List<T> value, @Nullable String comment) throws SerializationException {
-        rootNode.node((Object[]) path).act(node -> {
-            node.setList(type, value);
-            node.comment(comment);
-        });
-    }
-
-    public <T> void set(String[] path, Class<T> type, @Nullable T value, @Nullable String comment) throws SerializationException {
-        rootNode.node((Object[]) path).act(node -> {
-            node.set(type, value);
-            node.comment(comment);
-        });
-    }
-
-    public void setComment(String[] path, String comment){
-        rootNode.node((Object[]) path).comment(comment);
-    }
-
-    public void setCommentIfAbsent(String[] path, @NotNull String comment){
-        rootNode.node((Object[]) path).commentIfAbsent(comment);
-    }
-
-    public void setComments(Map<String[], String> comments){
-        comments.forEach((path, comment) -> rootNode.node((Object[]) path).comment(comment));
-    }
-
-    public void setCommentsIfAbsent(Map<String[], @NotNull String> comments){
-        comments.forEach((path, comment) -> rootNode.node((Object[]) path).commentIfAbsent(comment));
     }
 }
