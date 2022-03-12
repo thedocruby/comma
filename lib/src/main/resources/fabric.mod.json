@@ -19,7 +19,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "dev.thedocruby.comma.CommaMod"
+      "dev.thedocruby.comma.CommaClient"
     ]
   },
   "mixins": [

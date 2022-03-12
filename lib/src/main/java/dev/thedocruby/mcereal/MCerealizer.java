@@ -30,13 +30,13 @@ import java.util.List;
 
 public class MCerealizer {
     @Getter @NotNull
-    protected final String filePath;
+    protected final String savePath;
     protected final HoconConfigurationLoader loader;
     protected CommentedConfigurationNode rootNode;
 
-    public MCerealizer(String filePath) {
-        this.filePath = filePath;
-        this.loader = HoconConfigurationLoader.builder().path(Path.of(this.filePath)).build();
+    public MCerealizer(@NotNull String savePath) {
+        this.savePath = savePath;
+        this.loader = HoconConfigurationLoader.builder().path(Path.of(this.savePath)).build();
     }
 
     public void load() throws ConfigurateException {
