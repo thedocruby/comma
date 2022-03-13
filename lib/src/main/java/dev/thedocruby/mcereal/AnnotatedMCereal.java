@@ -25,15 +25,29 @@ import org.spongepowered.configurate.serialize.SerializationException;
 import java.util.List;
 import java.util.Map;
 
-public class AnnotatedMCerealizer extends MCerealizer{
+public class AnnotatedMCereal extends BasicMCereal implements AnnotatedSerializer {
 
-    public AnnotatedMCerealizer(String filePath) {
+    public AnnotatedMCereal(String filePath) {
         super(filePath);
     }
 
     @Nullable
     public String getComment(String[] path) {
         return ((CommentedConfigurationNode) rootNode).node((Object[]) path).comment();
+    }
+
+    public <T> void set(String[] path, Class<T> type, @Nullable T value, @Nullable String comment) throws SerializationException {
+        ((CommentedConfigurationNode) rootNode).node((Object[]) path).act(node -> {
+            node.set(type, value);
+            node.comment(comment);
+        });
+    }
+
+    public <T> void setList(String[] path, Class<T> type, @Nullable List<T> value, @Nullable String comment) throws SerializationException {
+        ((CommentedConfigurationNode) rootNode).node((Object[]) path).act(node -> {
+            node.setList(type, value);
+            node.comment(comment);
+        });
     }
 
     public void setString(String[] path, @Nullable String value, @Nullable String comment) throws SerializationException {
@@ -78,21 +92,7 @@ public class AnnotatedMCerealizer extends MCerealizer{
         });
     }
 
-    public <T> void setList(String[] path, Class<T> type, @Nullable List<T> value, @Nullable String comment) throws SerializationException {
-        ((CommentedConfigurationNode) rootNode).node((Object[]) path).act(node -> {
-            node.setList(type, value);
-            node.comment(comment);
-        });
-    }
-
-    public <T> void set(String[] path, Class<T> type, @Nullable T value, @Nullable String comment) throws SerializationException {
-        ((CommentedConfigurationNode) rootNode).node((Object[]) path).act(node -> {
-            node.set(type, value);
-            node.comment(comment);
-        });
-    }
-
-    public void setComment(String[] path, String comment){
+    public void setComment(String[] path, @Nullable String comment){
         ((CommentedConfigurationNode) rootNode).node((Object[]) path).comment(comment);
     }
 
@@ -100,7 +100,7 @@ public class AnnotatedMCerealizer extends MCerealizer{
         ((CommentedConfigurationNode) rootNode).node((Object[]) path).commentIfAbsent(comment);
     }
 
-    public void setComments(Map<String[], String> comments){
+    public void setComments(Map<String[], @Nullable String> comments){
         if (comments == null || comments.isEmpty()) return;
         comments.forEach((path, comment) -> ((CommentedConfigurationNode) rootNode).node((Object[]) path).comment(comment));
     }
