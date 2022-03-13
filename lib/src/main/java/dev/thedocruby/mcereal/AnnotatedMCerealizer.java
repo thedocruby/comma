@@ -19,6 +19,7 @@ package dev.thedocruby.mcereal;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.spongepowered.configurate.CommentedConfigurationNode;
 import org.spongepowered.configurate.serialize.SerializationException;
 
 import java.util.List;
@@ -32,80 +33,80 @@ public class AnnotatedMCerealizer extends MCerealizer{
 
     @Nullable
     public String getComment(String[] path) {
-        return rootNode.node((Object[]) path).comment();
+        return ((CommentedConfigurationNode) rootNode).node((Object[]) path).comment();
     }
 
     public void setString(String[] path, @Nullable String value, @Nullable String comment) throws SerializationException {
-        rootNode.node((Object[]) path).act(node -> {
+        ((CommentedConfigurationNode) rootNode).node((Object[]) path).act(node -> {
             node.set(value);
             node.comment(comment);
         });
     }
 
     public void setBoolean(String[] path, boolean value, @Nullable String comment) throws SerializationException {
-        rootNode.node((Object[]) path).act(node -> {
+        ((CommentedConfigurationNode) rootNode).node((Object[]) path).act(node -> {
             node.set(value);
             node.comment(comment);
         });
     }
 
     public void setInt(String[] path, int value, @Nullable String comment) throws SerializationException {
-        rootNode.node((Object[]) path).act(node -> {
+        ((CommentedConfigurationNode) rootNode).node((Object[]) path).act(node -> {
             node.set(value);
             node.comment(comment);
         });
     }
 
     public void setLong(String[] path, long value, @Nullable String comment) throws SerializationException {
-        rootNode.node((Object[]) path).act(node -> {
+        ((CommentedConfigurationNode) rootNode).node((Object[]) path).act(node -> {
             node.set(value);
             node.comment(comment);
         });
     }
 
     public void setFloat(String[] path, float value, @Nullable String comment) throws SerializationException {
-        rootNode.node((Object[]) path).act(node -> {
+        ((CommentedConfigurationNode) rootNode).node((Object[]) path).act(node -> {
             node.set(value);
             node.comment(comment);
         });
     }
 
     public void setDouble(String[] path, double value, @Nullable String comment) throws SerializationException {
-        rootNode.node((Object[]) path).act(node -> {
+        ((CommentedConfigurationNode) rootNode).node((Object[]) path).act(node -> {
             node.set(value);
             node.comment(comment);
         });
     }
 
     public <T> void setList(String[] path, Class<T> type, @Nullable List<T> value, @Nullable String comment) throws SerializationException {
-        rootNode.node((Object[]) path).act(node -> {
+        ((CommentedConfigurationNode) rootNode).node((Object[]) path).act(node -> {
             node.setList(type, value);
             node.comment(comment);
         });
     }
 
     public <T> void set(String[] path, Class<T> type, @Nullable T value, @Nullable String comment) throws SerializationException {
-        rootNode.node((Object[]) path).act(node -> {
+        ((CommentedConfigurationNode) rootNode).node((Object[]) path).act(node -> {
             node.set(type, value);
             node.comment(comment);
         });
     }
 
     public void setComment(String[] path, String comment){
-        rootNode.node((Object[]) path).comment(comment);
+        ((CommentedConfigurationNode) rootNode).node((Object[]) path).comment(comment);
     }
 
     public void setCommentIfAbsent(String[] path, @NotNull String comment){
-        rootNode.node((Object[]) path).commentIfAbsent(comment);
+        ((CommentedConfigurationNode) rootNode).node((Object[]) path).commentIfAbsent(comment);
     }
 
     public void setComments(Map<String[], String> comments){
         if (comments == null || comments.isEmpty()) return;
-        comments.forEach((path, comment) -> this.rootNode.node((Object[]) path).comment(comment));
+        comments.forEach((path, comment) -> ((CommentedConfigurationNode) rootNode).node((Object[]) path).comment(comment));
     }
 
     public void setCommentsIfAbsent(Map<String[], @NotNull String> comments){
         if (comments == null || comments.isEmpty()) return;
-        comments.forEach((path, comment) -> rootNode.node((Object[]) path).commentIfAbsent(comment));
+        comments.forEach((path, comment) -> ((CommentedConfigurationNode) rootNode).node((Object[]) path).commentIfAbsent(comment));
     }
 }

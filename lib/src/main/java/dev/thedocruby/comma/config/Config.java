@@ -13,7 +13,7 @@ public class Config<C extends ConfigClass> {
     protected String savePath;
     protected MCerealizer serializer;
 
-    protected Config(@NotNull ConfigBuilder builder) throws IllegalArgumentException {
+    protected Config(@NotNull ConfigBuilder builder, @NotNull Class<C> configClass) throws IllegalArgumentException {
         this.modId = builder.modId;
         this.savePath = builder.savePath;
         this.serializer = new MCerealizer(this.savePath);
@@ -34,5 +34,4 @@ public class Config<C extends ConfigClass> {
             e.printStackTrace();
         }
     }
-
 }

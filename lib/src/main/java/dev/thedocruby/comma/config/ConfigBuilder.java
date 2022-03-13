@@ -25,9 +25,9 @@ public class ConfigBuilder {
         return this;
     }
 
-    public <T extends Config<? extends ConfigClass>> T build(Class<T> configType) throws ConfigBuilderException {
+    public <C extends ConfigClass, T extends Config<C>> T build(@NotNull Class<T> configType, @NotNull Class<C> configClass) throws ConfigBuilderException {
         try {
-            return configType.getConstructor(this.getClass()).newInstance(this);
+            return configType.getConstructor(this.getClass(), configClass.getClass()).newInstance(this, configClass);
         } catch (NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
             throw new ConfigBuilderException(e);
         }

@@ -19,8 +19,8 @@ package dev.thedocruby.mcereal;
 
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
-import org.spongepowered.configurate.CommentedConfigurationNode;
 import org.spongepowered.configurate.ConfigurateException;
+import org.spongepowered.configurate.ConfigurationNode;
 import org.spongepowered.configurate.hocon.HoconConfigurationLoader;
 import org.spongepowered.configurate.serialize.SerializationException;
 
@@ -32,7 +32,7 @@ public class MCerealizer {
     @Getter @NotNull
     protected final String savePath;
     protected final HoconConfigurationLoader loader;
-    protected CommentedConfigurationNode rootNode;
+    protected ConfigurationNode rootNode;
 
     public MCerealizer(@NotNull String savePath) {
         this.savePath = savePath;
